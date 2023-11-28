@@ -1,7 +1,18 @@
-class Employee:
+class aSuperClass:
+    pass
+    
+class Employee(aSuperClass):
 
     # class variables
     company_name = 'NASA'
+
+    # "default" constructor to merely instantiate -wout init data- the object
+    # SEE https://realpython.com/python-class-constructor/#object-creation-with-__new__
+    def __new__(cls, *args, **kwargs):
+        instance = super().__new__(cls, *args, **kwargs)
+        # Customize instance now ...
+        cls.salary = 0
+        return instance
 
     # constructor to initialize the object
     def __init__(self, name, salary):
@@ -35,33 +46,34 @@ class Employee:
     
 if __name__ == "__main__":
 
-    # create first object
-
-    # emp0 = new Employee ver como se usa new
-
-    emp1 = Employee("Harry", 12000)
-    emp2 = Employee("Emma", 10000)
-    print(emp1)
-    print(emp2)
+    emp0 = Employee
+    print(emp0)
 
     print()
+    
+    # emp1 = Employee("Harry", 12000)
+    # emp2 = Employee("Emma", 10000)
+    # print(emp1)
+    # print(emp2)
 
-    emp2.company_name = "SPACEX"
-    print(emp1)
-    print(emp2)
+    # print()
 
-    print()
+    # emp2.company_name = "SPACEX"
+    # print(emp1)
+    # print(emp2)
 
-    Employee.modify_company_name("Roscosmos")
-    print(emp1)
-    print(emp2)
+    # print()
 
-    print()
+    # Employee.modify_company_name("Roscosmos")
+    # print(emp1)
+    # print(emp2)
 
-    emp3 = Employee("Vasili", 1000)    
-    print(emp1)
-    print(emp2)
-    print(emp3)
+    # print()
+
+    # emp3 = Employee("Vasili", 1000)    
+    # print(emp1)
+    # print(emp2)
+    # print(emp3)
 
     # del emp3
     # print(emp3)
