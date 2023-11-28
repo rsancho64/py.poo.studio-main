@@ -28,8 +28,9 @@ class Employee:
         # modify class variable
         cls.company_name = newName    
     
-    # TODO: static method
-    def staticmethod():
+    # TODO: static method: # SEE https://pynative.com/python-static-method/
+    @staticmethod
+    def sm():
         pass
     
 if __name__ == "__main__":
