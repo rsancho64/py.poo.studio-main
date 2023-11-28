@@ -8,11 +8,13 @@ class Employee(aSuperClass):
 
     # "default" constructor to merely instantiate -wout init data- the object
     # SEE https://realpython.com/python-class-constructor/#object-creation-with-__new__
-    def __new__(cls, *args, **kwargs):
-        instance = super().__new__(cls, *args, **kwargs)
-        # Customize instance now ...
-        cls.salary = 0
-        return instance
+
+    # TODO: test this ¿REGULAR? STYLE OF __new__ ni a subclase:
+    # def __new__(cls, *args, **kwargs):
+    #     instance = aSuperClass.__new__(cls, *args, **kwargs)
+    #     # Customize instance now ...
+    #     cls.salary = 0
+    #     return instance
 
     # constructor to initialize the object
     def __init__(self, name, salary):
@@ -51,29 +53,34 @@ if __name__ == "__main__":
 
     print()
     
-    # emp1 = Employee("Harry", 12000)
-    # emp2 = Employee("Emma", 10000)
-    # print(emp1)
-    # print(emp2)
+    emp1 = Employee("Harry", 12000)
+    emp2 = Employee("Emma", 10000)
+    print(emp1)
+    print(emp2)
 
-    # print()
+    print()
 
-    # emp2.company_name = "SPACEX"
-    # print(emp1)
-    # print(emp2)
+    emp2.company_name = "SPACEX"
+    print(emp1)
+    print(emp2)
 
-    # print()
+    print()
 
-    # Employee.modify_company_name("Roscosmos")
-    # print(emp1)
-    # print(emp2)
+    Employee.modify_company_name("Roscosmos")
+    print(emp1)
+    print(emp2)
 
-    # print()
+    print()
 
-    # emp3 = Employee("Vasili", 1000)    
-    # print(emp1)
-    # print(emp2)
-    # print(emp3)
+    emp3 = Employee("Vasili", 1000)    
+    print(emp1)
+    print(emp2)
+    print(emp3)
 
-    # del emp3
-    # print(emp3)
+    del emp3
+    print(emp3)
+
+    # try:
+    #     print(emp3)
+    # except:
+    #     raise(NameError)
