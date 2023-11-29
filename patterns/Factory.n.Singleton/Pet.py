@@ -6,6 +6,7 @@ from random import choice
 
 # FROM: https://realpython.com/python-class-constructor/#object-creation-with-__new__
 
+
 class PetFactory:
     """factory of pets"""
     def __new__(cls):
@@ -17,16 +18,18 @@ class PetFactory:
     def __init__(self):
         print("Never runs!")
 
-Pet = PetFactory
+
+Pet = PetFactory  # nombre alias para la factoria
+
 
 class SingletonPet(Pet):
-    """singleton of Pet"""    
+    """singleton of Pet"""
     _instance = None
+
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = Pet()
         return cls._instance
 
+
 myIrrepetiblePet = SingletonPet
-
-
