@@ -11,7 +11,7 @@ class PetFactory:
     def __new__(cls):
         ch = choice([Dog, Cat, Python])
         instance = super().__new__(ch)
-        print(f"I'm a {type(instance).__name__}!")
+        print(f"new {type(instance).__name__} exists!")
         return instance
 
     def __init__(self):
