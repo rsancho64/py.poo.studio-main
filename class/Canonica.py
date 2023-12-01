@@ -68,13 +68,17 @@ class Canonic:
         """
         return True  # TODO
 
+    # TODO : 3 ejercicios: usando propertys y sus decoraciones, hacer getters y setters para:
+    # 1: dos nuevos atributos: self.nombre y self.eda
+    # 2: el diccionario interno self.val 
+    # 3: un nuevo atributo self.timestamp, que sea marca de tiempo de la creacion del objeto...
 
 if __name__ == "__main__":
 
     c0 = Canonic()
     print(c0)
 
-    c0.pop("uno", "dos", "tres")  # k's not in data
+    c0.pop("uno", "dos", "tres")  # k's not in data,, nothing happens
 
     c0.put(nombre="ramon")
     c0.put(edad=25)
